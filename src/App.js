@@ -35,10 +35,10 @@ export default class App extends Component {
           <AppBar position="static">
             <Toolbar>
               <IconButton color="inherit" aria-label="Menu">
-                H
+                L
               </IconButton>
               <Typography variant="title" color="inherit" style={{ flex: 1 }}>
-                My Great Auction App
+              Luxury Plans audition
               </Typography>
               <Button color="inherit" component={Link} to='/items'>Items</Button>
               {
@@ -46,6 +46,7 @@ export default class App extends Component {
                   ?
                   <div>
                     <Button color="inherit" component={Link} to='/myitems'>{db.user._id}'s Items</Button>
+                    <Button color="inherit" component={Link} to='/myitems'>{db.user._id}'s Bids</Button>
                     <Button color="inherit" component={Link} to='/users'>Users</Button>
                     <Reset />
                     <Button color="inherit" component={Link} to='/logout'>Logout</Button>
