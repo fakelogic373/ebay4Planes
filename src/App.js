@@ -14,6 +14,7 @@ import IconButton from 'material-ui/IconButton';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import db from './db'
 
+import MyBids from './MyBids'
 export default class App extends Component {
 
   state = {
@@ -46,7 +47,7 @@ export default class App extends Component {
                   ?
                   <div>
                     <Button color="inherit" component={Link} to='/myitems'>{db.user._id}'s Items</Button>
-                    <Button color="inherit" component={Link} to='/myitems'>{db.user._id}'s Bids</Button>
+                    <Button color="inherit" component={Link} to='/mybids'>{db.user._id}'s Bids</Button>
                     <Button color="inherit" component={Link} to='/users'>Users</Button>
                     <Reset />
                     <Button color="inherit" component={Link} to='/logout'>Logout</Button>
@@ -67,6 +68,8 @@ export default class App extends Component {
           <Route path="/login" component={Login} />
           <Route path="/logout" component={Logout} />
           <Route path="/items/:_id" component={Item} />
+
+          <Route path="/mybids" component={MyBids} />
         </div>
       </Router>
     )
