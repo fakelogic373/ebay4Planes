@@ -1,0 +1,9 @@
+.DataList {
+    padding: 10px;
+    background-color: lightyellow;
+  }
+
+.Comma { list-style: none; margin: 0; padding: 0; }
+.Comma span { display: inline; }
+.Comma span:after { content: ","; }
+.Comma span:last-child:after { content: ""; }
