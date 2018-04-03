@@ -14,6 +14,8 @@ import IconButton from 'material-ui/IconButton';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import db from './db'
 
+import * as Planes from './planes'
+
 import MyBids from './MyBids'
 export default class App extends Component {
 
@@ -29,6 +31,8 @@ export default class App extends Component {
     this.authSubscription()
   }
 
+  // router page
+
   render() {
     return (
       <Router>
@@ -42,6 +46,7 @@ export default class App extends Component {
               Luxury Plans audition
               </Typography>
               <Button color="inherit" component={Link} to='/items'>Items</Button>
+              <Button color="inherit" component={Link} to='/planes'>planes</Button>
               {
                 this.state.user
                   ?
@@ -50,7 +55,7 @@ export default class App extends Component {
                     <Button color="inherit" component={Link} to='/mybids'>{db.user._id}'s Bids</Button>
                     <Button color="inherit" component={Link} to='/users'>Users</Button>
                     <Reset />
-                    <Button color="inherit" component={Link} to='/logout'>Logout im new</Button>
+                    <Button color="inherit" component={Link} to='/logout'>Logout</Button>
                   </div>
                   :
                   <div>
@@ -62,6 +67,11 @@ export default class App extends Component {
           </AppBar>
           <Route exact path="/" component={ItemList} />
           <Route path="/items" component={ItemList} />
+
+          <Route path="/planes" component={Planes.all} />
+          <Route path="/plane_details/:_id" component={Planes.details} />
+
+
           <Route path="/myitems" render={props => <ItemList my={true} {...props} />} />
           <Route path="/users" component={UserList} />
           <Route path="/register" component={Register} />
