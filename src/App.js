@@ -50,7 +50,7 @@ export default class App extends Component {
                     <Button color="inherit" component={Link} to='/mybids'>{db.user._id}'s Bids</Button>
                     <Button color="inherit" component={Link} to='/users'>Users</Button>
                     <Reset />
-                    <Button color="inherit" component={Link} to='/logout'>Logout</Button>
+                    <Button color="inherit" component={Link} to='/logout'>Logout im new</Button>
                   </div>
                   :
                   <div>
