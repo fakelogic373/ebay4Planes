@@ -69,6 +69,7 @@ export default class App extends Component {
           <Route path="/items" component={ItemList} />
 
           <Route path="/planes" component={Planes.all} />
+          <Route path="/plane_create" component={Planes.create} />
           <Route path="/plane_details/:_id" component={Planes.details} />
 
 
